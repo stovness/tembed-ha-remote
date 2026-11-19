@@ -1,0 +1,82 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "T-Embed Remote",
+        "description": "Adds the T-Embed Remote. There is nothing to fill in. Afterwards open the app on the remote to pair it.",
+        "submit": "Add"
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "T-Embed Remote is already set up."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "T-Embed Remote",
+        "menu_options": {
+          "settings": "Settings",
+          "pairing": "Enter pairing code",
+          "devices": "Paired devices"
+        },
+        "description": "Favourites, groups, rooms and pairing are easier on the T-Embed page in the sidebar."
+      },
+      "settings": {
+        "title": "Settings",
+        "description": "Pick which label marks your favourites and which hides things from the remote. Add these labels to lights and switches anywhere in Home Assistant. Rooms come from your areas.",
+        "data": {
+          "favourites_label": "Favourites",
+          "hide_label": "Hide from the remote",
+          "hidden_areas": "Rooms to leave out",
+          "allow_remote": "Allow from outside my network"
+        },
+        "data_description": {
+          "favourites_label": "Anything with this label shows in Favourites at the top. New labels are made under Settings, Areas, labels and zones.",
+          "hide_label": "Anything with this label never appears on the remote.",
+          "hidden_areas": "These rooms will not appear on the remote at all.",
+          "allow_remote": "Off by default. Leave it off unless the remote has to reach Home Assistant from another network; a key copied off a lost SD card then works from anywhere."
+        },
+        "submit": "Save"
+      },
+      "pairing": {
+        "title": "Enter pairing code",
+        "description": "Type the six digit code shown on the remote.",
+        "data": {
+          "code": "Code"
+        },
+        "submit": "Pair"
+      },
+      "devices": {
+        "title": "Paired devices",
+        "description": "Pick a remote to remove it. It stops working straight away and will ask to pair again.",
+        "data": {
+          "device_id": "Remote"
+        },
+        "submit": "Remove"
+      }
+    },
+    "error": {
+      "invalid_code": "That code is not correct. Try again.",
+      "unknown_device": "That remote is no longer paired."
+    },
+    "abort": {
+      "not_setup": "Add T-Embed Remote first.",
+      "no_pending": "No remote is waiting to pair. Open the app on the remote first, it will show a code.",
+      "pairing_complete": "Paired. The remote will load your rooms in a couple of seconds.",
+      "pairing_expired": "That code has expired. The remote will show a new one, enter that instead.",
+      "no_devices": "No remotes are paired yet.",
+      "device_removed": "Remote removed."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "last_seen": {
+        "name": "Last seen"
+      },
+      "battery": {
+        "name": "Battery"
+      }
+    }
+  }
+}
