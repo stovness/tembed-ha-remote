@@ -1,0 +1,6 @@
+ha_config.json
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.shots/
